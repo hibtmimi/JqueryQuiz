@@ -1,0 +1,45 @@
+h1
+{
+	font-weight: bold;
+	text-align: center;
+	color: red;
+	font-size: 26pt;
+
+}
+h3
+{
+	text-align: center;
+}
+
+#result
+{
+
+border-radius: 18px;
+font-weight: bold;
+}
+#quiz{
+	margin-left: 465px;
+}
+.question
+{
+font-weight: bold;
+font-size: 14pt;
+}
+.answers
+{
+	font-size: 13pt;
+}
+#results
+{
+	font-weight: bold;
+	color: red;
+	margin-left: 620px;
+}
+
+
+#submit
+{
+margin-left: 650px;
+color: red;
+
+}
