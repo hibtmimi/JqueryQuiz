@@ -1,45 +1,60 @@
-h1
-{
+
+
+h1 {
 	font-weight: bold;
 	text-align: center;
-	color: red;
 	font-size: 26pt;
-
+	color: #CD5C5C;
+	border-bottom: 1px solid dareken(#2dceb1, 15%);
+	letter-spacing: 4px;
+	padding: 12px 0;
+	background: #F5DEB3;
+	border-bottom: 1px solid #eeeeee;
 }
-h3
-{
+
+h3 {
 	text-align: center;
+	color: #F4A460;
 }
 
-#result
-{
+#quiz {
+	font-family: 'Arial';
+	line-height: 1.55;
+	color: #737373;
+	font-weight: bold;
+	margin-left: 445px;
+}
 
-border-radius: 18px;
-font-weight: bold;
+#result {
+	border-radius: 18px;
+	font-weight: bold;
 }
-#quiz{
-	margin-left: 465px;
+
+
+.question {
+	/*font-weight: bold;
+*/	font-size: 14pt;
+
 }
-.question
-{
-font-weight: bold;
-font-size: 14pt;
-}
-.answers
-{
+
+.answers {
 	font-size: 13pt;
 }
-#results
-{
+
+#results {
 	font-weight: bold;
 	color: red;
 	margin-left: 620px;
 }
 
-
-#submit
-{
-margin-left: 650px;
-color: red;
-
+#submit {
+	margin-left: 550px;
+	width: 300px;
+	padding: .8em 1em;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #800000;
+	background : #F5DEB3;
 }
+
