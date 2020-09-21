@@ -63,35 +63,36 @@ var submit = document.getElementById('submit');
 
 function quizFunc() {
   // variable to store the HTML output
-  var output = [];
+  var finalResult = [];
 
   // for each question
   questionArray.forEach(
-    (currentQuestion, number) => {
+    (questions, number) => {
       var answers = [];
 
-      // and for each available answer...
-      for (letter in currentQuestion.answers) {
+      // and for each answer
+      for (key in questions.answers) {
 
-        // ...add an HTML radio button
+        // add an HTML radio button
         answers.push(
-          `<label id="label">
-            <input type="radio" name="question${number}" value="${letter}">
-            ${letter}: ${currentQuestion.answers[letter]}
+          `<label>
+            <input type="radio" name="question${number}" value="${key}">
+            ${key}: ${questions.answers[key]}
+        
           </label>`
         );
       }
 
       // add this question and its answers to the output
-      output.push(
-        `<div class="question">${currentQuestion.question} </div>
+      finalResult.push(
+        `<div class="question">${questions.question} </div>
         <div class="answers">${answers.join('')} </div>  <br>`
       );
     }
   );
 
   // put the output in the html body 
-  quizBody.innerHTML = output.join('');
+  quizBody.innerHTML = finalResult.join('');
 }
 
 /* Function to show result  */
@@ -101,27 +102,27 @@ function show() {
   // gather answer  from our quiz
 
   // The querySelector() method only returns the first element that matches the specified selectors. To return all the matches, use the querySelectorAll() method instead.
-  var answerContainers = quizBody.querySelectorAll('.answers');
+  var checkAnswer = quizBody.querySelectorAll('.answers');
 
   var numCorrect = 0;
 
   // for each question
-  questionArray.forEach((currentQuestion, number) => {
+  questionArray.forEach((questions, number) => {
 
     // find selected answer
-    const answerContainer = answerContainers[number];
+    const answerContainer = checkAnswer[number];
     const selector = `input[name=question${number}]:checked`;
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
     // if answer is correct
-    if (userAnswer === currentQuestion.correctAnswer) {
+    if (userAnswer === questions.correctAnswer) {
       // add to the number of correct answers
       numCorrect++;
     }
   });
 
   // show number of correct answers out of total
-  $("#results").text(`Your result  : ${numCorrect}  out of  ${questionArray.length}`)
+  $("#results").text(`The  result is   : ${numCorrect}  out of  ${questionArray.length}`)
 }
 
 // display quiz 
